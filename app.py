@@ -72,6 +72,7 @@ def send_lobby(lobby_name):
     for member in room['members']:
         info_dict[member[0]] = [member[1], member[2]]
         members.append(member[0])
+    random.shuffle(members)
     # make dict for draws
     draws = {}
     draws[members[0]] = members[len(members) -1]
