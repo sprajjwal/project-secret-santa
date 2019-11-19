@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if is_lobby %}
+    <p>lobby exists</p>
+{% else %}
+    <p>lobby doesn't exist</p>
+{% endif %}
+<p>{{ is_lobby }}</p>
+
+<form action='/index' method="POST">
+    <input name="lobby_lookup" type="text" required>
+    <button type="submit">Search</button>
+</form>
+<h1>INDEX ROUTE</h1>
+
+{% endblock %}
