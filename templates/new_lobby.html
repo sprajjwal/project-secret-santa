@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+{% if message %}
+<p>{{message}}</p>
+{% endif %}
 <form method="POST" action="/new_lobby">
     <input name="lobby_name" type="text" required>
     <button type="submit">submit</button>

@@ -36,7 +36,7 @@ def make_lobby():
     """check if lobby name exists, if not, create it"""
     temp_lobby_name = request.form.get('lobby_name')
     if ss_room.find_one({'lobby_name': temp_lobby_name}): # name already exists
-        return render_template('new_lobby.html', if_exist=True)
+        return render_template('new_lobby.html', message="This name already exists")
     else:
         new_lobby = {
             'lobby_name': temp_lobby_name,
@@ -46,11 +46,12 @@ def make_lobby():
         return redirect(url_for('show_lobby', lobby_name=temp_lobby_name))
 
 @app.route('/lobby/<lobby_name>')
-def show_lobby(lobby_name):
+def show_lobby(lobby_name, message=""):
     """shows the lobby for the particular lobby name"""
     room = ss_room.find_one({'lobby_name': lobby_name})
     if room: 
-        return render_template('show_lobby.html', lobby=room)
+        message = request.args.get('message')
+        return render_template('show_lobby.html', lobby=room, message=message)
     else:
         return redirect(url_for('index', is_lobby=False))
 
@@ -75,7 +76,7 @@ def send_lobby(lobby_name):
     #pass everything to emailsender function
     send_email(draws, info_dict)
 
-    return redirect(url_for('show_lobby', lobby_name=lobby_name))
+    return redirect(url_for('show_lobby', lobby_name=lobby_name, message="Draws made and emails sent."))
 
 @app.route('/lobby/<lobby_name>/save', methods=['POST'])
 def save_data(lobby_name):

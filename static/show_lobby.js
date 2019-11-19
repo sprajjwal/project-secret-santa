@@ -21,7 +21,7 @@
         control_form.innerHTML += '<p>generating draws and sending emails</p>'
         setTimeout(function() {
             control_form.submit()
-        },1500)
+        },1000)
     })
 
     function add_person() {

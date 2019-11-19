@@ -2,7 +2,9 @@
 
 {% block content %}
 <p>Welcome to lobby: {{ lobby['lobby_name'] }}</p>
-
+{% if message %}
+<p>{{message }}</p>
+{% endif %}
 <form id="main-form" action="/lobby/{{lobby['lobby_name']}}/save" method="POST">
     <button type="submit">Save</button>
     {% for member in lobby['members'] %}
