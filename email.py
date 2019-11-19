@@ -1,18 +1,20 @@
-import smtplib
+import smtplib 
+  
+# creates SMTP session 
+s = smtplib.SMTP('smtp.gmail.com', 587) 
+  
+# start TLS for security 
+s.starttls() 
+sender = "findmysecretsanta@gmail.com"
 
-sender = 'findmysecretsanta@gmail.com'
-receivers = ['meshashwat007@gmail.com']
-
-message = """From: From Person <from@fromdomain.com>
-To: To Person <to@todomain.com>
-Subject: SMTP e-mail test
-
-This is a test e-mail message.
-"""
-
-try:
-   smtpObj = smtplib.SMTP('localhost')
-   smtpObj.sendmail(sender, receivers, message)         
-   print "Successfully sent email"
-except SMTPException:
-   print "Error: unable to send email"
+# Authentication 
+s.login(sender, "prajjwal12345") 
+  
+# message to be sent 
+message = "Message_you_need_to_send"
+  
+# sending the mail 
+s.sendmail(sender, "meshashwat007@gmail.com", message) 
+  
+# terminating the session 
+s.quit() 
