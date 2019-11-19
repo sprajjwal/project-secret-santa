@@ -3,4 +3,26 @@
 {% block content %}
 <p>Welcome to lobby: {{ lobby['lobby_name'] }}</p>
 
+<form id="main-form" action="/lobby/{{lobby['lobby_name']}}/save" method="POST">
+    <button type="submit">Save</button>
+    {% for member in lobby['members'] %}
+    <div id="person-{{loop.index }}">
+        <input name="person{{loop.index }}-name" class="person{{loop.index}}-name" type="name" placeholder="Name {{loop.index}}" value="{{lobby['members'][loop.index - 1][0]}}">
+        <input name="person{{loop.index }}-email" class="person{{loop.index }}-email" type="email" placeholder="email {{loop.index }}" value="{{lobby['members'][loop.index - 1][1]}}">
+        <input name="person{{loop.index }}-address" class="person{{loop.index}}-address" type="text" placeholder="address {{loop.index}}" value="{{lobby['members'][loop.index - 1][2]}}">
+    </div>
+    {% endfor %}
+ 
+
+    
+</form>
+<div class="control-people">
+    <button id="add-person" type="button">Add person field</button>
+    <button id="del-person" type="button">Remove person field</button>
+    <form id="control-form" action="/lobby/{{lobby['lobby_name']}}" method="POST">
+        <button type="button" id="send-draws">Generate draws</button>
+    </form>
+</div>
+
+<script src="/static/show_lobby.js"></script>
 {% endblock %}

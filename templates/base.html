@@ -16,7 +16,7 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav d-flex justify-content-end" style="list-style: none; width:100%;">
+                <ul class="navbar-nav d-flex justify-content-end" style="list-style: none; width:100%; align-items:center;">
                     <li class="nav-item">
                         <a href="/" class="nav-link text-light active">Home</a>
                     </li>
@@ -24,7 +24,10 @@
                         <a href="/new_lobby" class="nav-link text-light active">New Lobby</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" target="_blank" class="nav-link text-light">Our Twitter</a>
+                        <form action='/' method="POST" style="margin: 0; padding:0">
+                            <input name="lobby_lookup" type="text" placeholder="Group Lookup" required>
+                            <button type="submit">Search</button>
+                        </form>
                     </li>
             </div>          
         </nav>

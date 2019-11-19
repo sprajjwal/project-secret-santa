@@ -1,7 +1,7 @@
 import smtplib 
 import os
   
-def send_email(draws, email_dict, address_dict):
+def send_email(draws, info_dict):
     """sends email to everyone with their draw by getting their
     email from email_dict"""
     # creates SMTP session 
@@ -22,12 +22,12 @@ Subject: Your secret santa draw.
 
 
 Hi {sender},
-You are {draws[sender]}'s secret santa. {draws[sender]}'s email is {email_dict[draws[sender]]}.
-{draws[sender]}'s address is: {address_dict[draws[sender]]}
+You are {draws[sender]}'s secret santa. {draws[sender]}'s email is {info_dict[draws[sender]][0]}.
+{draws[sender]}'s address is: {info_dict[draws[sender]][1]}
 """
         
         # sending the mail 
-        s.sendmail(sender, email_dict[draws[sender]], message) 
+        s.sendmail(sender, info_dict[sender][0], message) 
     
     # terminating the session 
     s.quit() 
@@ -36,13 +36,10 @@ if __name__ == "__main__":
     draws = {
         'shaash': 'shashwat',
     }
-    email_list = {
-        'shaash': "findmysecretsanta@gmail.com",
-        'shashwat': "meshashwat007@gmail.com"
-    }
-    address_dict = {
-        'shaash': "851 california street, San francisco, 94108",
-        'shashwat': "851 california street, San francisco, 94108"
+   
+    info_dict = {
+        'shaash': ["findmysecretsanta@gmail.com", "851 california street, San francisco, 94108"],
+        'shashwat': ["meshashwat007@gmail.com", "851 california street, San francisco, 94108"]
     }
 
-    send_email(draws, email_list, address_dict)
+    send_email(draws, info_dict)
