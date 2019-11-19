@@ -1,11 +1,19 @@
 {% extends 'base.html' %}
+{% block title %}
+    <link rel="stylesheet" type="text/css" href="/static/index.css">
+{% endblock %}
+
 
 {% block content %}
+<div class="index-about">
+    <img src="/static/images/ss-1.jpg" alt="ss-1">
+    <p> Search for your Secret Santa Group.</p>
+    <form action='/' method="POST">
+        <input name="lobby_lookup" type="text" required>
+        <button type="submit">Search</button>
+    </form>
+</div>
 
 
-<form action='/' method="POST">
-    <input name="lobby_lookup" type="text" required>
-    <button type="submit">Search</button>
-</form>
 
 {% endblock %}

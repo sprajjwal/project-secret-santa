@@ -36,7 +36,7 @@ def make_lobby():
     """check if lobby name exists, if not, create it"""
     temp_lobby_name = request.form.get('lobby_name')
     if ss_room.find_one({'lobby_name': temp_lobby_name}): # name already exists
-        return render_template('new_lobby.html', message="This name already exists")
+        return render_template('new_lobby.html', message=f"{temp_lobby_name} is already taken. Try something else.")
     else:
         new_lobby = {
             'lobby_name': temp_lobby_name,

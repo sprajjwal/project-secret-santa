@@ -1,12 +1,20 @@
 {% extends 'base.html' %}
+{% block title %}
+<link rel="stylesheet" type="text/css" href="/static/new_lobby.css">
+{% endblock %}
 
 {% block content %}
-{% if message %}
-<p>{{message}}</p>
-{% endif %}
-<form method="POST" action="/new_lobby">
-    <input name="lobby_name" type="text" required>
-    <button type="submit">submit</button>
-</form>
+
+<div class="index-about">
+    <img src="/static/images/ss-2.jpg" alt="ss-2">
+    <p>What do you want to call your group?</p>
+    {% if message %}
+        <div class="message">{{message}}</div>
+    {% endif %}
+    <form method="POST" action="/new_lobby">
+        <input name="lobby_name" type="text" required>
+        <button type="submit">submit</button>
+    </form>
+</div>
 
 {% endblock %}

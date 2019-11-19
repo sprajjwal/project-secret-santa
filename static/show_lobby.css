@@ -1,0 +1,15 @@
+.container {
+    min-height: 70vh;
+    height: auto;
+}
+
+#main-form {
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.save-btn {
+    width: 20%;
+}
