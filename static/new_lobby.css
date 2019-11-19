@@ -24,5 +24,6 @@
 
 .message {
     color: red;
-    font-size: 2vh;
+    font-size: 2.5vh;
+    font-style: bold;
 }

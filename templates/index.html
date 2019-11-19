@@ -7,6 +7,9 @@
 {% block content %}
 <div class="index-about">
     <img src="/static/images/ss-1.jpg" alt="ss-1">
+    {% if message %}
+        <div class="message">Warning! {{message}}</div>
+    {% endif %}
     <p> Search for your Secret Santa Group.</p>
     <form action='/' method="POST">
         <input name="lobby_lookup" type="text" required>

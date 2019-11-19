@@ -21,3 +21,9 @@
     max-height: 50%;
     width: auto;
 }
+
+.message {
+    color: red;
+    font-size: 2.5vh;
+    font-style: bold;
+}

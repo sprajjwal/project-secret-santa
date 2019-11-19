@@ -18,13 +18,19 @@ app = Flask(__name__)
 @app.route('/')
 def index(is_lobby=True):
     """index route"""
-    return render_template('index.html', is_lobby=is_lobby)
+    message = request.args.get('message')
+    return render_template('index.html',  message=message)
 
 @app.route('/', methods=['POST'])
 def get_room():
     """processes room lookup and redirects to the room"""
     room_name = request.form.get('lobby_lookup')
-    return redirect(url_for('show_lobby', lobby_name=room_name, ))
+    message=""
+    if not ss_room.find_one({'lobby_name': room_name}): # name already exists
+        message=f"{room_name} not found."
+        return redirect(url_for('index', message=message))
+    else:
+        return redirect(url_for('show_lobby', lobby_name=room_name))
 
 @app.route('/new_lobby')
 def show_lobby_form():
