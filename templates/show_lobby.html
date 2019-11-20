@@ -11,18 +11,16 @@
 {% endif %}
 <div class="container">
     <img src="/static/images/ss-team.jpg" alt="ss-team">
+    <h3>Add members below: </h3>
+    <p id="error-message" style="display: none;">Make sure all fields are filled correctly.</p>
     <form id="main-form" action="/lobby/{{lobby['lobby_name']}}/save" method="POST">
-        <button type="submit" class="btn btn-primary save-btn">Save</button>
         {% for member in lobby['members'] %}
         <div id="person-{{loop.index }}">
-            <input name="person{{loop.index }}-name" class="person{{loop.index}}-name" type="name" placeholder="Name {{loop.index}}" value="{{lobby['members'][loop.index - 1][0]}}">
-            <input name="person{{loop.index }}-email" class="person{{loop.index }}-email" type="email" placeholder="email {{loop.index }}" value="{{lobby['members'][loop.index - 1][1]}}">
-            <input name="person{{loop.index }}-address" class="person{{loop.index}}-address" type="text" placeholder="address {{loop.index}}" value="{{lobby['members'][loop.index - 1][2]}}">
+            <input name="person{{loop.index }}-name" class="person{{loop.index}}-name" type="name" placeholder="Name {{loop.index}}" value="{{lobby['members'][loop.index - 1][0]}}" required>
+            <input name="person{{loop.index }}-email" class="person{{loop.index }}-email" type="email" placeholder="email {{loop.index }}" value="{{lobby['members'][loop.index - 1][1]}}" required>
+            <input name="person{{loop.index }}-address" class="person{{loop.index}}-address" type="text" placeholder="address {{loop.index}}" value="{{lobby['members'][loop.index - 1][2]}}" required>
         </div>
-        {% endfor %}
-        
-    
-        
+        {% endfor %}      
     </form>
     <div class="control-people">
         <button id="add-person" class="btn btn-warning" type="button">Add person field</button>

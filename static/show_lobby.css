@@ -13,3 +13,15 @@
 .save-btn {
     width: 20%;
 }
+
+#error-message {
+    margin-top: 20px;
+}
+
+input:valid {
+    border:solid 2px black;
+}
+
+input:invalid {
+    border: solid 2px red;
+}

@@ -12,9 +12,12 @@
     {% endif %}
     <p> Search for your Secret Santa Group.</p>
     <form action='/' method="POST">
-        <input name="lobby_lookup" type="text" required>
+        <input name="lobby_lookup" type="text" placeholder="Search group" required>
         <button type="submit" class="btn-info">Search</button>
     </form>
+    <div>
+        <p>Or make a <a href="/new_lobby">new group</a> instead.</p>
+    </div>
 </div>
 
 
