@@ -42,7 +42,7 @@ def make_lobby():
     """check if lobby name exists, if not, create it"""
     temp_lobby_name = request.form.get('lobby_name')
     if ss_room.find_one({'lobby_name': temp_lobby_name}): # name already exists
-        return render_template('new_lobby.html', message=f"{temp_lobby_name} is already taken. Try something else.")
+        return render_template('new_lobby.html', message=f"'{temp_lobby_name}'' is already taken. Try something else.")
     else:
         new_lobby = {
             'lobby_name': temp_lobby_name,
@@ -72,13 +72,12 @@ def send_lobby(lobby_name):
     for member in room['members']:
         info_dict[member[0]] = [member[1], member[2]]
         members.append(member[0])
-    random.shuffle(members)
+    random.Random(len(members)).shuffle(members)
     # make dict for draws
     draws = {}
     draws[members[0]] = members[len(members) -1]
     for index in range(1, len(members)):
         draws[members[index]] = members[index-1]
-
 
     #pass everything to emailsender function
     send_email(draws, info_dict)

@@ -10,7 +10,7 @@
 
     // event listeners  
 
-    main_form.oninput = (() => {
+    main_form.onchange = (() => {
         if (main_form.checkValidity()) {
             main_form.submit()
         } else {
