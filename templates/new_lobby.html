@@ -11,10 +11,16 @@
     {% if message %}
         <div class="message">Warning! {{message}}</div>
     {% endif %}
-    <form method="POST" action="/new_lobby">
-        <input name="lobby_name" type="text" placeholder="New group name" required>
+    <div id="error-message" class="message" style="display: none;">Passcodes aren't matching</div>
+    <div id="repeat-message" class="message" style="display:none;">Please don't use ^ in the name</div>
+    <form method="POST" id="signup" action="/new_group">
+        <input name="group_name" class="group_name" type="text" placeholder="New group name" required>
+        <input class="passcode" name="passcode" type="number" placeholder="Passcode" required>
+        <input class="passcode2" name="confirm_passcode" type="number" placeholder="Confirm passcode" required>
         <button type="submit" class="btn-info">submit</button>
     </form>
 </div>
+
+<script src="/static/new_lobby.js"></script>
 
 {% endblock %}

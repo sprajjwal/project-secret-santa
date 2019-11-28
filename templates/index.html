@@ -11,13 +11,14 @@
     {% if message %}
         <div class="message">Warning! {{message}}</div>
     {% endif %}
-    <p> Search for your Secret Santa Group.</p>
+    <p> Have you made a group yet, If yes, let's find it here.</p>
     <form action='/' method="POST">
-        <input name="lobby_lookup" type="text" placeholder="Search group" required>
+        <input name="group_lookup" type="text" placeholder="Search group" required>
+        <input name="group_code" type="number" placeholder="Group Code" required>
         <button type="submit" class="btn-info">Search</button>
     </form>
     <div>
-        <p>Or make a <a href="/new_lobby">new group</a> instead.</p>
+        <p>Or let's get you started and make a <a href="/new_group">new group</a> here.</p>
     </div>
 </div>
 

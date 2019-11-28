@@ -18,7 +18,7 @@
         <div id="person-{{loop.index }}">
             <input name="person{{loop.index }}-name" class="person{{loop.index}}-name" type="name" placeholder="Name {{loop.index}}" value="{{lobby['members'][loop.index - 1][0]}}" required>
             <input name="person{{loop.index }}-email" class="person{{loop.index }}-email" type="email" placeholder="email {{loop.index }}" value="{{lobby['members'][loop.index - 1][1]}}" required>
-            <input name="person{{loop.index }}-address" class="person{{loop.index}}-address" type="text" placeholder="address {{loop.index}}" value="{{lobby['members'][loop.index - 1][2]}}" required>
+            <input name="person{{loop.index }}-address" class="person{{loop.index}}-address" type="text" placeholder="address {{loop.index}}" required>
         </div>
         {% endfor %}      
     </form>

@@ -23,11 +23,12 @@
                         <a href="/" class="nav-link text-light active">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="/new_lobby" class="nav-link text-light active">New Group</a>
+                        <a href="/new_group" class="nav-link text-light active">New Group</a>
                     </li>
                     <li class="nav-item">
                         <form action='/' method="POST" style="margin: 0; padding:0">
-                            <input name="lobby_lookup" type="text" placeholder="Group Lookup" required>
+                            <input name="group_lookup" type="text" placeholder="Group Lookup" required>
+                            <input name="group_code" type="number" placeholder="Group Code" required>
                             <button type="submit" class="btn-info">Search</button>
                         </form>
                     </li>
