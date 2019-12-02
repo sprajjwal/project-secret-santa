@@ -5,11 +5,11 @@ import os
 import random
 from send_email import send_email
 
-# host = os.environ.get('MONGODB_URI', 'mongodb://localhost:27017/secretSanta')
-# client = MongoClient(host=f'{host}?retryWrites=false')
-# db = client.get_default_database()
-client = MongoClient()
-db = client.secretSanta
+host = os.environ.get('MONGODB_URI', 'mongodb://localhost:27017/secretSanta')
+client = MongoClient(host=f'{host}?retryWrites=false')
+db = client.get_default_database()
+# client = MongoClient()
+# db = client.secretSanta
 ss_room = db.ss_room
 
 
