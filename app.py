@@ -70,9 +70,10 @@ def show_lobby(lobby_code, message=""):
     else:
         return redirect(url_for('index', is_lobby=False))
 
-@app.route('/lobby/<lobby_name>', methods=['POST'])
-def send_lobby(lobby_name):
+@app.route('/lobby/<lobby_code>', methods=['POST'])
+def send_lobby(lobby_code):
     """makes draws and sends emails"""
+    [lobby_name, passcode] = lobby_code.split("^", 1)
     email_list = {}
     room = ss_room.find_one({'lobby_name': lobby_name})
     members = []
@@ -91,12 +92,13 @@ def send_lobby(lobby_name):
     #pass everything to emailsender function
     send_email(draws, info_dict)
 
-    return redirect(url_for('show_lobby', lobby_name=lobby_name, message="Draws made and emails sent."))
+    return redirect(url_for('show_lobby', lobby_code=lobby_code, message="Draws made and emails sent."))
 
-@app.route('/lobby/<lobby_name>/save', methods=['POST'])
-def save_data(lobby_name):
+@app.route('/lobby/<lobby_code>/save', methods=['POST'])
+def save_data(lobby_code):
     """Saves the infromation stored"""
     form = request.form.to_dict()
+    [lobby_name, passcode] = lobby_code.split("^", 1)
     ctr = 1
     members_list = []
     while True:
@@ -108,10 +110,11 @@ def save_data(lobby_name):
             break
     updated_item = {
         'lobby_name': lobby_name,
+        'passcode': passcode,
         'members': members_list
     }
     ss_room.update_one(
         {"lobby_name": lobby_name},
         {'$set': updated_item}
     )
-    return redirect(url_for('show_lobby', lobby_name=lobby_name))
+    return redirect(url_for('show_lobby', lobby_code=lobby_code))

@@ -7,6 +7,7 @@
     const send_button = document.getElementById('send-draws')
     const control_form = document.getElementById('control-form')
     const error_message = document.getElementById('error-message')
+    const size_error = document.getElementById('size-error')
 
     // event listeners  
 
@@ -31,10 +32,19 @@
     })
 
     send_button.addEventListener("click", function(e) {
-        control_form.innerHTML += '<p>generating draws and sending emails</p>'
-        setTimeout(function() {
-            control_form.submit()
-        },1000)
+        const currentPeople = document.querySelectorAll("div[id^='person']")
+        
+        if (currentPeople.length >= 2 && main_form.checkValidity()) {
+            size_error.style.display = 'none'
+            control_form.innerHTML += '<p>generating draws and sending emails</p>'
+            setTimeout(function() {
+                control_form.submit()
+            },1000)
+            
+        } else {
+            size_error.style.display = 'block'
+        }
+        
     })
 
     function add_person() {

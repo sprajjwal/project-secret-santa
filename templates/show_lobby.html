@@ -13,20 +13,21 @@
     <img src="/static/images/ss-team.jpg" alt="ss-team">
     <h3>Add members below: </h3>
     <p id="error-message" style="display: none;">Make sure all fields are filled correctly.</p>
-    <form id="main-form" action="/lobby/{{lobby['lobby_name']}}/save" method="POST">
+    <form id="main-form" action="/lobby/{{lobby['lobby_name']}}^{{lobby['passcode']}}/save" method="POST">
         {% for member in lobby['members'] %}
         <div id="person-{{loop.index }}">
             <input name="person{{loop.index }}-name" class="person{{loop.index}}-name" type="name" placeholder="Name {{loop.index}}" value="{{lobby['members'][loop.index - 1][0]}}" required>
             <input name="person{{loop.index }}-email" class="person{{loop.index }}-email" type="email" placeholder="email {{loop.index }}" value="{{lobby['members'][loop.index - 1][1]}}" required>
-            <input name="person{{loop.index }}-address" class="person{{loop.index}}-address" type="text" placeholder="address {{loop.index}}" required>
+            <input name="person{{loop.index }}-address" class="person{{loop.index}}-address" type="text" placeholder="address {{loop.index}}" value="{{lobby['members'][loop.index - 1][2]}}" required>
         </div>
         {% endfor %}      
     </form>
     <div class="control-people">
         <button id="add-person" class="btn btn-warning" type="button">Add person field</button>
         <button id="del-person" class="btn btn-danger" type="button">Remove person field</button>
-        <form id="control-form" action="/lobby/{{lobby['lobby_name']}}" method="POST">
+        <form id="control-form" action="/lobby/{{lobby['lobby_name']}}^{{lobby['passcode']}}" method="POST">
             <button type="button" class="btn btn-success" id="send-draws">Send us our Secret Santa</button>
+            <p id="size-error" style="display: none;">You don't have enough people.</p>
         </form>
     </div>
 </div>
