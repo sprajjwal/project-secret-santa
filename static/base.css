@@ -33,7 +33,12 @@ body >* {
     margin: 0 0.7em;
 }
 
-
+.navbar input {
+    max-width: 45%;
+    margin: 0 auto;
+    border-radius: 11px;
+    border:1px solid bred;
+}
 
 .content {
     min-height:80vh;

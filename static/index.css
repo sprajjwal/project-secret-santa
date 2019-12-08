@@ -5,21 +5,34 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    align-items: center;
+    
     background-color:#ff7878;
 }
 
 .index-about p {
-    font-size: 5vh;
+    font-size: 3.5vmin;
     color: rgb(51, 47, 47);
     font-style: italic;
-    font-weight: 150;
+    font-weight: 200;
+    margin: 0 auto;
 }
 
 .index-about img {
-    margin: 2vh;
     max-height: 50%;
     width: auto;
+    margin: 0 auto;
+}
+
+.index-about form {
+    max-width:85%;
+    margin:0 auto;
+}
+.index-about input {
+    width:250px;
+    max-width: 45%;
+    margin: 0 auto;
+    border-radius: 11px;
+    border:1px solid bred;
 }
 
 .message {

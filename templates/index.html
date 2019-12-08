@@ -6,7 +6,7 @@
 
 {% block content %}
 <div class="index-about">
-    <img src="/static/images/ss-1.jpg" alt="ss-1">
+    <img src="/static/images/ss-1.jpg" alt="ss-1" >
     <hr style="border: 1px solid rgb(155, 155, 206); width: 80%;" />
     {% if message %}
         <div class="message">Warning! {{message}}</div>
@@ -14,12 +14,10 @@
     <p> Have you made a group yet, If yes, let's find it here.</p>
     <form action='/' method="POST">
         <input name="group_lookup" type="text" placeholder="Search group" required>
-        <input name="group_code" type="number" placeholder="Group Code" required>
+        <input name="group_code" type="number" placeholder="Group passcode" required>
         <button type="submit" class="btn-info">Search</button>
     </form>
-    <div>
-        <p>Or let's get you started and make a <a href="/new_group">new group here.</a></p>
-    </div>
+    <p>Or let's get you started and make a <a href="/new_group">new group here.</a></p>
 </div>
 
 
