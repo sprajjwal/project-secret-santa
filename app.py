@@ -46,7 +46,7 @@ def make_lobby():
     temp_code = request.form.get('passcode')
     room_code = temp_lobby_name + "^" + temp_code
     if ss_room.find_one({'lobby_name': temp_lobby_name}): # name already exists
-        return render_template('new_lobby.html', message=f"'{temp_lobby_name}'' is already taken. Try something else.")
+        return render_template('new_lobby.html', message=f"'{temp_lobby_name}' is already taken. Try something else.")
     elif ss_room.find_one({'lobby_name': temp_lobby_name, 'passcode': room_code}):
         return redirect(url_for('show_lobby', lobby_code=room_code ))
     else:

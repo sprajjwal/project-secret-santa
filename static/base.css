@@ -33,12 +33,26 @@ body >* {
     margin: 0 0.7em;
 }
 
-.navbar input {
-    max-width: 45%;
-    margin: 0 auto;
-    border-radius: 11px;
-    border:1px solid bred;
+.navbar form {
+    margin:0 auto;
+    display: inline;
 }
+
+.navbar input {
+    margin: 0;
+    border:1px solid red;
+    height: auto;
+}
+.navbar button {
+    border-top-right-radius: 9px;
+    border-bottom-right-radius: 9px;
+}
+.group {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding-left: 5px;
+}
+
 
 .content {
     min-height:80vh;

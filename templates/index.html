@@ -13,8 +13,8 @@
     {% endif %}
     <p> Have you made a group yet, If yes, let's find it here.</p>
     <form action='/' method="POST">
-        <input name="group_lookup" type="text" placeholder="Search group" required>
-        <input name="group_code" type="number" placeholder="Group passcode" required>
+        <input name="group_lookup" type="text" placeholder="Search group" class='group' required>
+        <input name="group_code" type="number" placeholder="Group passcode" class='passcode' required>
         <button type="submit" class="btn-info">Search</button>
     </form>
     <p>Or let's get you started and make a <a href="/new_group">new group here.</a></p>

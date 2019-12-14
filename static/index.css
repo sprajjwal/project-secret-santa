@@ -5,7 +5,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    
+    align-items: center;
     background-color:#ff7878;
 }
 
@@ -20,23 +20,37 @@
 .index-about img {
     max-height: 50%;
     width: auto;
-    margin: 0 auto;
 }
 
 .index-about form {
-    max-width:85%;
+    justify-self: center;
+    width: auto;
     margin:0 auto;
+    display: grid;
+    grid-template-columns: 3fr 3fr;
+    grid-template-rows: 1fr 1fr;
 }
 .index-about input {
-    width:250px;
-    max-width: 45%;
-    margin: 0 auto;
-    border-radius: 11px;
-    border:1px solid bred;
+    margin: 0;
+    border:1px solid red;
+    height: auto;
+}
+.index-about button {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    grid-column-start: 1;
+    grid-column-end:3;
+}
+.passcode {
+    border-top-right-radius: 10px;
 }
 
 .message {
     color: red;
     font-size: 2.5vh;
     font-style: bold;
+}
+
+.group {
+    border-top-left-radius: 10px;
 }
