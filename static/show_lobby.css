@@ -1,6 +1,7 @@
 .container {
     min-height: 70vh;
     height: auto;
+    margin: 0;
 }
 
 #main-form {

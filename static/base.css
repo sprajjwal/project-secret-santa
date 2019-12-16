@@ -1,7 +1,8 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #a8daae;
+    background-image: url('/static/images/small-holly-tree-branch-snow-seamless-pattern-vector-background_58717-350.jpg');
+    
 }
 
 
@@ -13,7 +14,7 @@ body >* {
     margin:0;
     margin-bottom: 2vh;
     box-shadow: 0 2px 9px 3px rgba(50,52,64,.25);
-    background-color: #ff0000; 
+    background-color: rgb(255, 66, 66); 
     padding-right:5vw; 
     padding-left: 5vw;
 }
@@ -55,14 +56,15 @@ body >* {
 
 
 .content {
-    min-height:80vh;
+    min-height:85vh;
+    width: auto;
     height: auto;
-    
+    margin-bottom: 0;
 }
 
 footer {
     margin: 0;
-    background-color: #378b29;
+    background-color: #7eca5b;
     height: 10vh;
     display: flex;
     justify-content: center;

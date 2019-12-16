@@ -7,7 +7,13 @@
 
 <div class="index-about">
     <img src="/static/images/ss-2.jpg" alt="ss-2">
-    <p>What do you want to call your group?</p>
+    <div class="new-lobby-info">
+        <h1>How to use:</h1>
+        <p>- First, think of a name for your group.</p>
+        <p>- Be sure to use a code you will remember in case you need to make changes later.</p>
+        <p>- Try not to use ^ in your group name.</p>
+    </div>
+    
     {% if message %}
         <div class="message">Warning! {{message}}</div>
     {% endif %}
@@ -17,7 +23,7 @@
         <input name="group_name" class="group_name" type="text" placeholder="New group name" required>
         <input class="passcode" name="passcode" type="number" placeholder="Passcode(eg: 420, 1592)" style="width: 250px;" required>
         <input class="passcode2" name="confirm_passcode" type="number" placeholder="Confirm passcode" style="width: 250px;"  required>
-        <button type="submit" class="btn-info">submit</button>
+        <button type="submit" class="button">submit</button>
     </form>
 </div>
 

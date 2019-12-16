@@ -1,25 +1,37 @@
 {% extends 'base.html' %}
 {% block title %}
     <link rel="stylesheet" type="text/css" href="/static/index.css">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    
 {% endblock %}
 
 
 {% block content %}
-<div class="index-about">
-    <img src="/static/images/ss-1.jpg" alt="ss-1" >
-    <hr style="border: 1px solid rgb(155, 155, 206); width: 80%;" />
-    {% if message %}
-        <div class="message">Warning! {{message}}</div>
-    {% endif %}
-    <p> Have you made a group yet, If yes, let's find it here.</p>
-    <form action='/' method="POST">
-        <input name="group_lookup" type="text" placeholder="Search group" class='group' required>
-        <input name="group_code" type="number" placeholder="Group passcode" class='passcode' required>
-        <button type="submit" class="btn-info">Search</button>
-    </form>
-    <p>Or let's get you started and make a <a href="/new_group">new group here.</a></p>
+
+<div class="main-area">
+    <div class="left">
+        <!--Login-->
+        <h1>Already have a Group?
+        </h1>
+        <form action='/' method="POST">
+            <input name="group_lookup" type="text" placeholder="Search group name" class='index-group1' required>
+            <input name="group_code" type="number" placeholder="Group passcode" class='index-passcode1' required>
+            <button type="submit" class="button-index1">Search</button>
+        </form>
+    </div>
+    
+    <div class="right">
+        <!--Instructions-->
+        <div class="head"><h1>Welcome to <i>FindmySecretSanta!</i></h1></div>
+        <h3>Here you can:</h3>
+        <ul>
+            <li>Make a group for you and your friends.</li>
+            <li>Invite them over to fill their details or fill it yourself.</li>
+            <li>Randomly assign everyone a secret santa and get your information over email.</li>
+        </ul>
+        <h4>Don't worry, we can keep secrets. Also, you can choose to get rid of all your information whenever you want.</h4>
+        <h4>Start a New Group <a href="/new_group">here</a>.</h4>
+    </div>
 </div>
-
-
 
 {% endblock %}
