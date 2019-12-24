@@ -1,7 +1,9 @@
-.container {
+.lobby-container {
+    background-color: #bacc90c7;
     min-height: 70vh;
     height: auto;
     margin: 0;
+    padding: 2em;
 }
 
 #main-form {

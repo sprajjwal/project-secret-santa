@@ -1,28 +1,26 @@
-{% extends 'base.html' %}
-{% block title %}
-    <link rel="stylesheet" type="text/css" href="/static/index.css">
-    <meta content="width=device-width, initial-scale=1" name="viewport" />
-    
-{% endblock %}
-
-
-{% block content %}
+{% extends 'base.html' %} {% block title %}
+<link rel="stylesheet" type="text/css" href="/static/index.css">
+<meta content="width=device-width, initial-scale=1" name="viewport" /> {% endblock %} {% block content %}
 
 <div class="main-area">
     <div class="left">
         <!--Login-->
-        <h1>Already have a Group?
-        </h1>
-        <form action='/' method="POST">
-            <input name="group_lookup" type="text" placeholder="Search group name" class='index-group1' required>
-            <input name="group_code" type="number" placeholder="Group passcode" class='index-passcode1' required>
+        <h1>Already have a Group?</h1>
+        {% if message %}
+        <p>{{message}}</p>
+        {% endif %}
+        <form action="/" method="POST">
+            <input name="group_lookup" type="text" placeholder="Search group name" class="index-group1" required>
+            <input name="group_code" type="number" placeholder="Group passcode" class="index-passcode1" required>
             <button type="submit" class="button-index1">Search</button>
         </form>
     </div>
-    
+
     <div class="right">
         <!--Instructions-->
-        <div class="head"><h1>Welcome to <i>FindmySecretSanta!</i></h1></div>
+        <div class="head">
+            <h1>Welcome to <i>FindmySecretSanta!</i></h1>
+        </div>
         <h3>Here you can:</h3>
         <ul>
             <li>Make a group for you and your friends.</li>
