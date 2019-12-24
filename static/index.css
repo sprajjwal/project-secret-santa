@@ -1,4 +1,4 @@
-.main-area{
+.main-area {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -6,11 +6,19 @@
 }
 
 .left {
-    background-color:rgba(221, 57, 57, 0.829);
+    background-color: rgba(221, 57, 57, 0.829);
     width: 20vw;
     max-width: 25vw;
     max-height: 55vh;
     padding: 0.8em 1em;
+}
+
+.index-error-message {
+    font-size: 3vmin;
+    font-family: 'Rubik';
+    color: #401c44bd;
+    text-align: center;
+    font-weight: 400;
 }
 
 .left form {
@@ -20,27 +28,25 @@
     height: 20vh;
 }
 
-.left h1{
+.left h1 {
     text-align: center;
     color: #234099;
     font-size: 5vmin;
     font-family: 'Lobster Two', cursive;
 }
 
-.left input{
+.left input {
     padding: 0.3em;
     margin-bottom: 1vh;
     width: 90%;
 }
-
 
 .left button {
     background-color: rgb(31, 133, 31);
     width: 50%;
 }
 
-
-.right{
+.right {
     padding: 0.8em 1em;
     max-width: 73.5%;
     height: 90%;
@@ -54,14 +60,15 @@
     background-color: rgba(241, 180, 180, 0.295) !important;
     background-blend-mode: color;
     background-repeat: no-repeat;
-    height:30%;
-    background-size:cover;
+    height: 30%;
+    background-size: cover;
     padding: auto;
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 2vh;
 }
+
 .head h1 {
     font-family: 'Lobster Two', cursive;
     color: #234099;
@@ -70,12 +77,14 @@
     text-align: center;
 }
 
-.right h3, .right h4 {
+.right h3,
+.right h4 {
     @import url("https://fonts.googleapis.com/css?family=Rubik&display=swap");
     font-family: 'Rubik', sans-serif;
     font-size: 3.5vmin;
     color: #234099;
 }
+
 .right li {
     @import url('https://fonts.googleapis.com/css?family=Raleway:300&display=swap');
     font-family: 'Raleway', sans-serif;
@@ -84,25 +93,23 @@
     font-size: 3vmin;
 }
 
-
-@media screen and (max-width:700px){
-    .main-area{
+@media screen and (max-width:700px) {
+    .main-area {
         display: flex;
         flex-direction: column-reverse;
-        width:85vw;
+        width: 85vw;
         margin-top: 6vh;
         margin-bottom: 5vh;
     }
-    .left{
+    .left {
         margin-top: 2vh;
-        width:100%;
+        width: 100%;
         max-width: 100%;
         height: 55vh;
         max-height: 55vh;
     }
-    .right{
-        
-        width:100%;
+    .right {
+        width: 100%;
         max-width: 100%;
     }
-  }
+}

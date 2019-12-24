@@ -30,10 +30,10 @@ def get_room():
     room = ss_room.find_one({'lobby_name': room_name})
     message=""
     if not ss_room.find_one({'lobby_name': room_name}): # name already exists
-        message=f"{room_name} not found."
+        message=f"<i>{room_name}</i> not found."
         return redirect(url_for('index', message=message))
     elif room['passcode'] != code:
-        message=f"Incorrect passcode for {room_name}."
+        message=f"Incorrect passcode for <i>{room_name}</i>."
         return redirect(url_for('index', message=message))
     else:
         return redirect(url_for('show_lobby', lobby_code=room_code))
